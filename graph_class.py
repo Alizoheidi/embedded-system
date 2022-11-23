@@ -9,7 +9,7 @@ class Graph:
       A  B  C
     A -1 2  3  | it mean A is connected to B and C
     B -1 -1 1  | it mean B is connected to C
-    C -1 1 -1  | B and C connected to each other with nondirectional edge
+    C -1 1 -1  | B and C connected to each other with non-directional edge
     """
 
     def __init__(self):
@@ -49,7 +49,7 @@ class Graph:
         return True
 
     # working with edges methods here----------------------
-    def add_directional_edge(self, vertex1, vertex2, cost):
+    def add_directional_edge(self, vertex1, vertex2, cost=1):
         """
         add directional edge from vertex1 to vertex2 with given cost
         return True
@@ -67,9 +67,9 @@ class Graph:
 
         return True
 
-    def add_nondirectional_edge(self, vertex1, vertex2, cost):
+    def add_nondirectional_edge(self, vertex1, vertex2, cost=1):
         """
-        add non directional edge between vertex1 to vertex2 with given cost
+        add non-directional edge between vertex1 to vertex2 with given cost
         return True
         """
         if vertex1 not in self.vertices_list:
@@ -85,39 +85,6 @@ class Graph:
         self.connection_matrix[i_v2][i_v1] = cost
 
         return True
-
-    def add_edges_dir(self, from_vertex, **to_vertices):
-        """
-        add directional edge from_vertex to_vertices with given
-        from_vertex : vertex
-        to_vertex: **vertex=cost | vertex should'nt be str ; A=1 connect to 'A' with cost 1
-        return True
-        """
-        for to_v_c in to_vertices.items():
-            self.add_directional_edge(from_vertex, to_v_c[0], to_v_c[1])
-        return True
-
-    def add_edges_nondir(self, from_vertex, **to_vertices):
-        """
-        add non-directional edge from_vertex to_vertices with given
-        from_vertex : vertex
-        to_vertex: **vertex=cost | vertex shouldn't be str ; A=1 connect to 'A' with cost 1
-        return True
-        """
-        for to_v_c in to_vertices.items():
-            self.add_nondirectional_edge(from_vertex, to_v_c[0], to_v_c[1])
-        return True
-
-    def cheapest_connection(self, vertex):
-        """
-        return the cheapest connection (connection with lowest cost) from connection list of vertex
-        return in form (next vertex,cost)
-        """
-        connection_list = self.cost_list(vertex)
-        connection_fillter = list(filter(lambda co: co != -1, connection_list))
-        cheapest = min(connection_fillter)
-        index = connection_list.index(cheapest)
-        return (self.vertices_list[index], cheapest)
 
     def get_vertex(self, meaning):
         """
@@ -150,16 +117,6 @@ class Graph:
                 connected_list.append(self.vertices_list[i])
         return connected_list
 
-    def all_connections(self):
-        """
-        print all connections in form:
-            vertex: list of connections
-        """
-        s = ''
-        for vertex in self.vertices_list:
-            s += str(vertex) + ':' + str(self.connected_vertices(vertex)) + '\n'
-        print(s)
-
     def graph_dict(self):
         """
         return a dictionary wich map any vertex to it's connections' list
@@ -181,11 +138,6 @@ class Graph:
                 s += '|' + str(self.vertices_list[j]) + ':' + str(self.connection_matrix[i][j]) + '|'
             s += '\n'
         print(s)
-
-    def give_edge(self, vertex1, vertex2):
-        v_connections = self.cost_list(vertex1)
-        v_next_index = self.vertices_list.index(vertex2)
-        return v_connections[v_next_index]
 
     def give_nondirected_edges(self,vertex):
         v_connected = self.connected_vertices(vertex)

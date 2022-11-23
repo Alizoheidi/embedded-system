@@ -18,7 +18,7 @@ def add_task_nodes(graph):
     graph.add_vertex('task_3', task_3)
 
     # add edges
-    graph.add_directional_edge('task_1', 'task_2', 1)
-    graph.add_directional_edge('task_2', 'task_3', 1)
+    graph.add_directional_edge('task_1', 'task_2')
+    graph.add_directional_edge('task_2', 'task_3')
 
 
