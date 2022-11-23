@@ -140,14 +140,14 @@ class Graph:
     def connected_vertices(self, vertex):
         """
         return list of connected vertices with cost of the given vertex
-        in form (connected vertex,cost)
+        in form (connected vertex)
         """
         cost_list = self.cost_list(vertex)
         connected_list = []
         for i in range(len(cost_list)):
             cost = cost_list[i]
             if cost != -1:
-                connected_list.append((self.vertices_list[i], cost))
+                connected_list.append(self.vertices_list[i])
         return connected_list
 
     def all_connections(self):
@@ -186,3 +186,21 @@ class Graph:
         v_connections = self.cost_list(vertex1)
         v_next_index = self.vertices_list.index(vertex2)
         return v_connections[v_next_index]
+
+    def give_nondirected_edges(self,vertex):
+        v_connected = self.connected_vertices(vertex)
+        nondir_edge_list = []
+        for v in v_connected:
+            if vertex in self.connected_vertices(v):
+                nondir_edge_list.append(v)
+        return nondir_edge_list
+
+    def give_directed_edges(self,vertex):
+        v_connected = self.connected_vertices(vertex)
+        dir_edge_list = []
+        for v in v_connected:
+            if vertex not in self.connected_vertices(v):
+                dir_edge_list.append(v)
+        return dir_edge_list
+
+
