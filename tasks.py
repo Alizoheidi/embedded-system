@@ -1,4 +1,10 @@
 def add_task_nodes(graph):
+    """
+    :param graph: Graph object
+    this function will add task nodes to the given graph
+    and also define functions for them
+    each function represent operations
+    """
     # first Task
     def task_1(x):
         return 4 + 3 - 1, ('+','-')

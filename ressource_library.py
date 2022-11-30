@@ -1,7 +1,14 @@
 from tabels import execution_time_table
 
 
-def add_ressource_library_nodes(graph):
+def add_resource_library_nodes(graph):
+    """
+    :param graph: Graph object
+    this function will add resource library nodes to the given graph
+    and also define functions for them
+    each function find execution time by an operator which depend on connected task
+    functions use .loc method from pandas library to get data from dataframe (the execution-time table)
+    """
     def fpga(operator):
         return execution_time_table.loc['fpga'][operator]
 
@@ -12,7 +19,7 @@ def add_ressource_library_nodes(graph):
 
     graph.add_vertex('risc', risc)
 
-    def hwm(operator):
-        return execution_time_table.loc['HWM'][operator]
+    def cisc(operator):
+        return execution_time_table.loc['Cisc'][operator]
 
-    graph.add_vertex('HWM', hwm)
+    graph.add_vertex('Cisc', cisc)

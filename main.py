@@ -1,27 +1,21 @@
-# TODO: develop graph creator function
-# TODO: calculate and show result function
 from graph_class import Graph
 from tasks import add_task_nodes
-from ressource_library import add_ressource_library_nodes
-from create_graph import graph_creator
+from ressource_library import add_resource_library_nodes
+from create_edges import add_edges
 from computing import computing_results
-from tabels import execution_time_table
 
 if __name__ == "__main__":
+    # create graph object from Graph class
     graph = Graph()
-    print('execution time table\n',execution_time_table)
+    # create task nodes
     add_task_nodes(graph)
-    add_ressource_library_nodes(graph)
-    graph_creator(graph)
-    # start from task 1
+    # create resource library nodes
+    add_resource_library_nodes(graph)
+    # create edges for graph
+    add_edges(graph)
+    # start doing all tasks and compute execution time
     exe_time = computing_results(graph, 'task_1', 0)
+    # show results
     print('\nall execution time: ',exe_time)
-    print('total execution time: ',sum(exe_time))
-
-
-
-
-
-
     
 
