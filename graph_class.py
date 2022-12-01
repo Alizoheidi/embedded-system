@@ -7,7 +7,7 @@ class Graph:
     interpretation can be a number or a function or anything else
     our matrix will be like
       A  B  C
-    A -1 2  3  | it mean A is connected to B and C
+    A -1 1  1     | it mean A is connected to B and C
     B -1 -1 1  | it mean B is connected to C
     C -1 1 -1  | B and C connected to each other with non-directional edge
     """
@@ -74,17 +74,6 @@ class Graph:
         self.adjacency_matrix[i_v2][i_v1] = cost
 
         return True
-
-    def get_vertex(self, function):
-        """
-        return the vertex with given function
-        return False if it's not exit
-        """
-        try:
-            index = list(self.vertices_functions.values()).index(function)
-            return self.vertices_list[index]
-        except:
-            return False
 
     def cost_list(self, vertex):
         """

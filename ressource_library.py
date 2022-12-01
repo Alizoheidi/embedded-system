@@ -8,8 +8,8 @@ def add_resource_library_nodes(graph):
     :param graph: Graph object
     this function will add resource library nodes to the given graph
     and also define functions for them
-    each function find execution time by an operator which depend on connected task
-    functions use .loc method from pandas library to get data from dataframe (the execution-time table)
+    each function find CPI depended on connected task
+    functions use .loc method from pandas library to get data from dataframe (the CPI table)
     """
 
     def fpga(task_name):

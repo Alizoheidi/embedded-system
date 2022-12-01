@@ -2,6 +2,7 @@ import pandas
 from tabels import clock_rate
 from ressource_library import PROCESSORS_NAME
 
+
 performance_table = pandas.DataFrame(data=[['-', '-', '-'], ['-', '-', '-'], ['-', '-', '-']],
                                      index=PROCESSORS_NAME,
                                      columns=['task_1', 'task_2', 'task_3'])
