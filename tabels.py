@@ -1,9 +1,9 @@
 import pandas
 from ressource_library import PROCESSORS_NAME
 #        t1  t2  t3
-# FPGA | 0.1 0.1 0.2
-# RISC | 0.3 0.3 0.4
-# Cisc | 0.2 0.2 0.3
+# FPGA | 1.5 0.9 1.8
+# RISC | 2.0 1.3 2.4
+# Cisc | 2.2 1.5 2.7
 cycle_per_instruction_table = pandas.DataFrame(data=[[1.5, 0.9, 1.8], [2, 1.3, 2.4], [2.2, 1.5, 2.7]],
                                                index=PROCESSORS_NAME, columns=['task_1','task_2','task_3'])
 

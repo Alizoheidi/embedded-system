@@ -84,8 +84,7 @@ class Graph:
 
     def connected_vertices(self, vertex):
         """
-        return list of connected vertices with cost of the given vertex
-        in form (connected vertex)
+        return list of connected vertices
         """
         cost_list = self.cost_list(vertex)
         connected_list = []
@@ -119,5 +118,4 @@ class Graph:
             if vertex not in self.connected_vertices(v):
                 dir_edge_list.append(v)
         return dir_edge_list
-
 
