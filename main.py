@@ -19,4 +19,4 @@ if __name__ == "__main__":
     performance_table.index = ["FPGA(XC 2064)",
                                "RISC(IBM 801)",
                                "Cisc(INTEL X88)"]
-    print('\nall execution time:\n', performance_table)
+    print('\nall performances:\n', performance_table)
