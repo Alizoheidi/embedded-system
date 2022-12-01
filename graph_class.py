@@ -37,17 +37,6 @@ class Graph:
 
         return length
 
-    def make_interpretation(self, vertex, function):
-        """
-        make functions for nodes or change it and return True
-        """
-        if vertex not in self.vertices_list:
-            # self.add_vertex(vertex,meaning)
-            return False
-        else:
-            self.vertices_functions[vertex] = function
-        return True
-
     # working with edges methods here----------------------
     def add_directional_edge(self, vertex1, vertex2, cost=1):
         """
@@ -113,6 +102,7 @@ class Graph:
         connected_list = []
         for i in range(len(cost_list)):
             cost = cost_list[i]
+            # if it's connected
             if cost != -1:
                 connected_list.append(self.vertices_list[i])
         return connected_list

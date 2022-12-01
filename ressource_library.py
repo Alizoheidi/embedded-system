@@ -1,4 +1,6 @@
-from tabels import execution_time_table
+PROCESSORS_NAME = ['fpga', 'risc', 'Cisc']
+
+from tabels import cycle_per_instruction_table
 
 
 def add_resource_library_nodes(graph):
@@ -9,17 +11,18 @@ def add_resource_library_nodes(graph):
     each function find execution time by an operator which depend on connected task
     functions use .loc method from pandas library to get data from dataframe (the execution-time table)
     """
-    def fpga(operator):
-        return execution_time_table.loc['fpga'][operator]
 
-    graph.add_vertex('fpga', fpga)
+    def fpga(task_name):
+        return cycle_per_instruction_table.loc[PROCESSORS_NAME[0]][task_name]
 
-    def risc(operator):
-        return execution_time_table.loc['risc'][operator]
+    graph.add_vertex(PROCESSORS_NAME[0], fpga)
 
-    graph.add_vertex('risc', risc)
+    def risc(task_name):
+        return cycle_per_instruction_table.loc[PROCESSORS_NAME[1]][task_name]
 
-    def cisc(operator):
-        return execution_time_table.loc['Cisc'][operator]
+    graph.add_vertex(PROCESSORS_NAME[1], risc)
 
-    graph.add_vertex('Cisc', cisc)
+    def cisc(task_name):
+        return cycle_per_instruction_table.loc[PROCESSORS_NAME[2]][task_name]
+
+    graph.add_vertex(PROCESSORS_NAME[2], cisc)
