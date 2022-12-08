@@ -14,7 +14,7 @@ if __name__ == "__main__":
     add_resource_library_nodes(graph)
     # create edges for graph
     add_edges(graph)
-    # start doing all tasks and compute execution time
+    # start doing all tasks
     # task_1 and task_4 are initial nodes
     computing_results(graph, 'task_1')
     computing_results(graph, 'task_4')
@@ -26,5 +26,4 @@ if __name__ == "__main__":
     print('\nall execution times:\n', execution_time_table)
     print('\nenergy consumption:\n', energy_consumption_table)
     # Json files
-    ressource_library_json = ressource_library_table.to_json(orient='index')
-    print(ressource_library_json)
+    ressource_library_table.to_json('resource_library.json',orient='index')

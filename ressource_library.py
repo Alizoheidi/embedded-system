@@ -21,6 +21,7 @@ def add_resource_library_nodes(graph):
         return ressource_library_table.loc[PROCESSORS_NAME[1]]['clock rate'],\
                ressource_library_table.loc[PROCESSORS_NAME[1]]['frequency rate'],\
                ressource_library_table.loc[PROCESSORS_NAME[1]]['consume power']
+
     graph.add_vertex(PROCESSORS_NAME[1], risc)
 
     def cisc():
