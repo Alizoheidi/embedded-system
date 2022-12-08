@@ -1,6 +1,4 @@
-PROCESSORS_NAME = ['fpga', 'risc', 'Cisc']
-
-from tabels import cycle_per_instruction_table
+from tabels import PROCESSORS_NAME, ressource_library_table
 
 
 def add_resource_library_nodes(graph):
@@ -12,17 +10,21 @@ def add_resource_library_nodes(graph):
     functions use .loc method from pandas library to get data from dataframe (the CPI table)
     """
 
-    def fpga(task_name):
-        return cycle_per_instruction_table.loc[PROCESSORS_NAME[0]][task_name]
+    def fpga():
+        return ressource_library_table.loc[PROCESSORS_NAME[0]]['clock rate'],\
+               ressource_library_table.loc[PROCESSORS_NAME[0]]['frequency rate'],\
+               ressource_library_table.loc[PROCESSORS_NAME[0]]['consume power']
 
     graph.add_vertex(PROCESSORS_NAME[0], fpga)
 
-    def risc(task_name):
-        return cycle_per_instruction_table.loc[PROCESSORS_NAME[1]][task_name]
-
+    def risc():
+        return ressource_library_table.loc[PROCESSORS_NAME[1]]['clock rate'],\
+               ressource_library_table.loc[PROCESSORS_NAME[1]]['frequency rate'],\
+               ressource_library_table.loc[PROCESSORS_NAME[1]]['consume power']
     graph.add_vertex(PROCESSORS_NAME[1], risc)
 
-    def cisc(task_name):
-        return cycle_per_instruction_table.loc[PROCESSORS_NAME[2]][task_name]
-
+    def cisc():
+        return ressource_library_table.loc[PROCESSORS_NAME[2]]['clock rate'],\
+               ressource_library_table.loc[PROCESSORS_NAME[2]]['frequency rate'],\
+               ressource_library_table.loc[PROCESSORS_NAME[2]]['consume power']
     graph.add_vertex(PROCESSORS_NAME[2], cisc)
