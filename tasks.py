@@ -1,3 +1,10 @@
+import json
+
+with open('task_list.json') as json_file:
+    task_dict = json.load(json_file)
+TASKS_NAME = list(task_dict.keys())
+
+
 def add_task_nodes(graph):
     """
     :param graph: Graph object
@@ -5,37 +12,59 @@ def add_task_nodes(graph):
     """
 
     # first Task
-    def task_1():
-        return '+'
+    def t1():
+        instruction_count = task_dict[TASKS_NAME[0]]["instruction count"]
+        frequency_rate = task_dict[TASKS_NAME[0]]["frequency rate"]
+        cpi_instruction = task_dict[TASKS_NAME[0]]["CPI instruction"]
+        return instruction_count, frequency_rate, cpi_instruction
 
-    graph.add_vertex('task_1', task_1())
+    graph.add_vertex(TASKS_NAME[0], t1())
 
     # second Task
-    def task_2():
-        return '-'
+    def t2():
+        instruction_count = task_dict[TASKS_NAME[1]]["instruction count"]
+        frequency_rate = task_dict[TASKS_NAME[1]]["frequency rate"]
+        cpi_instruction = task_dict[TASKS_NAME[1]]["CPI instruction"]
+        return instruction_count, frequency_rate, cpi_instruction
 
-    graph.add_vertex('task_2', task_2())
+    graph.add_vertex(TASKS_NAME[1], t2())
 
     # third Task
-    def task_3():
-        return '*'
+    def t3():
+        instruction_count = task_dict[TASKS_NAME[2]]["instruction count"]
+        frequency_rate = task_dict[TASKS_NAME[2]]["frequency rate"]
+        cpi_instruction = task_dict[TASKS_NAME[2]]["CPI instruction"]
+        return instruction_count, frequency_rate, cpi_instruction
 
-    graph.add_vertex('task_3', task_3())
+    graph.add_vertex(TASKS_NAME[2], t3())
 
     # forth Task
-    def task_4():
-        return '*'
+    def t4():
+        instruction_count = task_dict[TASKS_NAME[3]]["instruction count"]
+        frequency_rate = task_dict[TASKS_NAME[3]]["frequency rate"]
+        cpi_instruction = task_dict[TASKS_NAME[3]]["CPI instruction"]
+        return instruction_count, frequency_rate, cpi_instruction
 
-    graph.add_vertex('task_4', task_4())
+    graph.add_vertex(TASKS_NAME[3], t4())
 
     # fifth Task
-    def task_5():
-        return '+'
+    def t5():
+        instruction_count = task_dict[TASKS_NAME[4]]["instruction count"]
+        frequency_rate = task_dict[TASKS_NAME[4]]["frequency rate"]
+        cpi_instruction = task_dict[TASKS_NAME[4]]["CPI instruction"]
+        return instruction_count, frequency_rate, cpi_instruction
 
-    graph.add_vertex('task_5', task_5())
+    graph.add_vertex(TASKS_NAME[4], t5())
 
     # sixth Task
-    def task_6():
-        return '/'
+    def t6():
+        instruction_count = task_dict[TASKS_NAME[5]]["instruction count"]
+        frequency_rate = task_dict[TASKS_NAME[5]]["frequency rate"]
+        cpi_instruction = task_dict[TASKS_NAME[5]]["CPI instruction"]
+        return instruction_count, frequency_rate, cpi_instruction
 
-    graph.add_vertex('task_6', task_6())
+    graph.add_vertex(TASKS_NAME[5], t6())
+
+    initial_nodes = (TASKS_NAME[0], TASKS_NAME[3])
+
+    return initial_nodes
