@@ -3,7 +3,7 @@ from tasks import add_task_nodes
 from ressource_library import add_resource_library_nodes
 from create_edges import add_edges
 from computing import computing_results, performance_table, execution_time_table, energy_consumption_table
-from create_lp_results import asp_resource_library, asp_taskList, asp_mapping_option
+from create_lp_results import asp_resource_library, asp_taskList,asp_mapping_option
 
 if __name__ == "__main__":
     # create graph object from Graph class
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     print('\nall execution times:\n', execution_time_table)
     print('\nenergy consumption:\n', energy_consumption_table)
     # create .lp results
-    print(asp_taskList(graph))
-    print(asp_resource_library(graph))
-    print(asp_mapping_option())
+    asp_taskList(graph)
+    asp_resource_library(graph)
+    asp_mapping_option()
 

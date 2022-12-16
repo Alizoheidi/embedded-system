@@ -30,7 +30,7 @@ def computing_results(graph, task_vertex):
         # get properties of each task
         instruction_count, frequency_rate, cpi_instruction = graph.vertices_functions[task_vertex]
         # get frequency ,cpi and clock rate of each processor
-        cpi, p_frequency, p_consume_power = graph.vertices_functions[processor]
+        p_type, cpi, p_frequency, p_consume_power,clock_rate = graph.vertices_functions[processor]
         # cycle time = 1/frequency
         cycle_time = 1 / p_frequency
         # execution time = instruction_count * CPI * cycle time

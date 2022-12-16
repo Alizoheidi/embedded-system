@@ -8,18 +8,24 @@ def asp_resource_library(graph):
     p_consumePower_str = ''
     performance_str = ''
     energy_consumption_str = ''
+    p_clock_rate_str = ''
+    p_type_str = ''
     i = 0
     for p in PROCESSORS_NAME:
-        p_performance = sum([round(performace, 6) for performace in performance_table.iloc[i].values if performace != '-'])
-        p_energy_consumption = sum([round(energy, 6) for energy in energy_consumption_table.iloc[i].values if energy != '-'])
+        p_performance = sum(
+            [round(performance, 6) for performance in performance_table.iloc[i].values if performance != '-'])
+        p_energy_consumption = sum(
+            [round(energy, 6) for energy in energy_consumption_table.iloc[i].values if energy != '-'])
         i += 1
-        cpi, p_frequency, p_consume_power = graph.vertices_functions[p]
+        p_type, cpi, p_frequency, p_consume_power, clock_rate = graph.vertices_functions[p]
+        p_clock_rate_str += f'clock rate(r{i},{clock_rate}).\n'
+        p_type_str += f'type(r{i},{p_type})\n'
         p_name_str += f'resourceTyp(r{i},{p}).\n'
         p_consumePower_str += f'consumePower(r{i},{p_consume_power}).\n'
-        performance_str += f'p_performance(r{i},{p_performance}).\n'
+        performance_str += f'performance(r{i},{p_performance}).\n'
         energy_consumption_str += f'frequency(r{i},{p_energy_consumption}).\n'
 
-    str_data = "######  resources library\n\n" + p_name_str + p_consumePower_str + energy_consumption_str+ performance_str
+    str_data = p_name_str + p_type_str + p_consumePower_str + energy_consumption_str + performance_str + p_clock_rate_str
 
     with open('ASP_resource_library.lp', 'w') as f:
         f.truncate(0)
@@ -38,13 +44,14 @@ def asp_taskList(graph):
                     "sucessors(s4,t4,0).\nsucessors(s5,t5,t4).\nsucessors(s6,t6,t5).\n"
 
     task_id = ""
-    for t in TASKS_NAME:
-        task_id += f"taskId({t},a1).\n"
-        instruction_count, frequency_rate, cpi_instruction = graph.vertices_functions[t]
-        instructionCount_str += f"instructionCount({t},{instruction_count}).\n"
-        sizeOfgraph += f'sizeOfgraph({t},{len(graph.give_nondirected_edges(t))})\n'
 
-    str_data = "####### task list\n\napplication(a1).\n\n" + task_id + operator_str + sizeOfgraph + instructionCount_str + sucessors_str
+    for task in TASKS_NAME:
+        task_id += f"taskId({task},a1).\n"
+        instruction_count, frequency_rate, cpi_instruction = graph.vertices_functions[task]
+        instructionCount_str += f"instructionCount({task},{instruction_count}).\n"
+        sizeOfgraph += f'sizeOfgraph({task},{len(graph.give_nondirected_edges(task))}).\n'
+
+    str_data = "application(a1).\n\n" + task_id + operator_str + sizeOfgraph + instructionCount_str + sucessors_str
 
     with open('ASP_taskList.lp', 'w') as f:
         f.truncate(0)
@@ -62,8 +69,7 @@ def asp_mapping_option():
         mappingOption_str += f'mappingOption(m{i},{m[0]},{m[1]}).\n'
         executionTime_str += f'executionTime(m{i},{m[2]}).\n'
 
-    str_data = '#######  mapping_option\n\n' + mappingOption_str + '\n' + \
-               '##### dynamic_charactristic\n\n' + executionTime_str
+    str_data = mappingOption_str + '\n' + executionTime_str
 
     with open('ASP_mapping_option.lp', 'w') as f:
         f.truncate(0)
