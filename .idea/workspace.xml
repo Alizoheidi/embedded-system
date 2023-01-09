@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25973983-2974-42b1-a900-a3ea5ec8111d" name="Changes" comment="add josn files to git">
-      <change afterPath="$PROJECT_DIR$/charts.py" afterDir="false" />
+    <list default="true" id="25973983-2974-42b1-a900-a3ea5ec8111d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP_mapping_option.lp" beforeDir="false" afterPath="$PROJECT_DIR$/ASP_mapping_option.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP_resource_library.lp" beforeDir="false" afterPath="$PROJECT_DIR$/ASP_resource_library.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP_taskList.lp" beforeDir="false" afterPath="$PROJECT_DIR$/ASP_taskList.lp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/charts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/computing.py" beforeDir="false" afterPath="$PROJECT_DIR$/computing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_edges.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_edges.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_lp_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_lp_results.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ressource_library.py" beforeDir="false" afterPath="$PROJECT_DIR$/ressource_library.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tabels.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressource_library.py" beforeDir="false" afterPath="$PROJECT_DIR$/resource_library.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/task_list.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671154103818</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="chart">
+      <created>1673294688134</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673294688134</updated>
+    </task>
+    <task id="LOCAL-00018" summary="chart">
+      <created>1673294847356</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673294847356</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +235,7 @@
     <MESSAGE value="create lp files and modified text" />
     <MESSAGE value="add clock rate property and type for resource library" />
     <MESSAGE value="add josn files to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="add josn files to git" />
+    <MESSAGE value="chart" />
+    <option name="LAST_COMMIT_MESSAGE" value="chart" />
   </component>
 </project>

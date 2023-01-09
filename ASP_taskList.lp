@@ -15,9 +15,9 @@ taskOperator(t6,/).
 nodeDegree(t1,2).
 nodeDegree(t2,2).
 nodeDegree(t3,1).
-nodeDegree(t4,2).
+nodeDegree(t4,1).
 nodeDegree(t5,2).
-nodeDegree(t6,2).
+nodeDegree(t6,3).
 instructionCount(t1,33).
 instructionCount(t2,40).
 instructionCount(t3,55).

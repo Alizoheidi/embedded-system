@@ -2,37 +2,31 @@
   "t1": {
     "instruction count": 33,
     "frequency rate": 30,
-    "CPI instruction": 3,
     "task Operator": "+"
   },
   "t2": {
     "instruction count": 40,
     "frequency rate": 25,
-    "CPI instruction": 2,
     "task Operator": "-"
   },
   "t3": {
     "instruction count": 55,
     "frequency rate": 50,
-    "CPI instruction": 5,
     "task Operator": "*"
   },
   "t4": {
     "instruction count": 60,
     "frequency rate": 50,
-    "CPI instruction": 5,
     "task Operator": "*"
   },
   "t5": {
     "instruction count": 20,
     "frequency rate": 30,
-    "CPI instruction": 3,
     "task Operator": "+"
   },
   "t6": {
     "instruction count": 11,
     "frequency rate": 10,
-    "CPI instruction": 3,
     "task Operator": "/"
   }
 }

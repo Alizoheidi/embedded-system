@@ -1,4 +1,4 @@
-from ressource_library import PROCESSORS_NAME
+from resource_library import PROCESSORS_NAME
 import matplotlib.pyplot as plt
 import numpy as np
 

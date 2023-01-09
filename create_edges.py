@@ -1,5 +1,5 @@
 import random
-from ressource_library import PROCESSORS_NAME
+from resource_library import PROCESSORS_NAME
 from tasks import TASKS_NAME
 
 

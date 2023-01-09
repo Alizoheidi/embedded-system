@@ -1,7 +1,7 @@
 from charts import energy_consumption_pie_chart, time_bar_graph
 from graph_class import Graph
 from tasks import add_task_nodes
-from ressource_library import add_resource_library_nodes
+from resource_library import add_resource_library_nodes
 from create_edges import add_edges
 from computing import computing_results, performance_table, execution_time_table, energy_consumption_table
 from create_lp_results import asp_resource_library, asp_taskList,asp_mapping_option

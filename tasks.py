@@ -15,8 +15,7 @@ def add_task_nodes(graph):
     def t1():
         instruction_count = task_dict[TASKS_NAME[0]]["instruction count"]
         frequency_rate = task_dict[TASKS_NAME[0]]["frequency rate"]
-        cpi_instruction = task_dict[TASKS_NAME[0]]["CPI instruction"]
-        return instruction_count, frequency_rate, cpi_instruction
+        return instruction_count, frequency_rate
 
     graph.add_vertex(TASKS_NAME[0], t1())
 
@@ -24,8 +23,7 @@ def add_task_nodes(graph):
     def t2():
         instruction_count = task_dict[TASKS_NAME[1]]["instruction count"]
         frequency_rate = task_dict[TASKS_NAME[1]]["frequency rate"]
-        cpi_instruction = task_dict[TASKS_NAME[1]]["CPI instruction"]
-        return instruction_count, frequency_rate, cpi_instruction
+        return instruction_count, frequency_rate
 
     graph.add_vertex(TASKS_NAME[1], t2())
 
@@ -33,8 +31,7 @@ def add_task_nodes(graph):
     def t3():
         instruction_count = task_dict[TASKS_NAME[2]]["instruction count"]
         frequency_rate = task_dict[TASKS_NAME[2]]["frequency rate"]
-        cpi_instruction = task_dict[TASKS_NAME[2]]["CPI instruction"]
-        return instruction_count, frequency_rate, cpi_instruction
+        return instruction_count, frequency_rate
 
     graph.add_vertex(TASKS_NAME[2], t3())
 
@@ -42,8 +39,7 @@ def add_task_nodes(graph):
     def t4():
         instruction_count = task_dict[TASKS_NAME[3]]["instruction count"]
         frequency_rate = task_dict[TASKS_NAME[3]]["frequency rate"]
-        cpi_instruction = task_dict[TASKS_NAME[3]]["CPI instruction"]
-        return instruction_count, frequency_rate, cpi_instruction
+        return instruction_count, frequency_rate
 
     graph.add_vertex(TASKS_NAME[3], t4())
 
@@ -51,8 +47,7 @@ def add_task_nodes(graph):
     def t5():
         instruction_count = task_dict[TASKS_NAME[4]]["instruction count"]
         frequency_rate = task_dict[TASKS_NAME[4]]["frequency rate"]
-        cpi_instruction = task_dict[TASKS_NAME[4]]["CPI instruction"]
-        return instruction_count, frequency_rate, cpi_instruction
+        return instruction_count, frequency_rate
 
     graph.add_vertex(TASKS_NAME[4], t5())
 
@@ -60,8 +55,7 @@ def add_task_nodes(graph):
     def t6():
         instruction_count = task_dict[TASKS_NAME[5]]["instruction count"]
         frequency_rate = task_dict[TASKS_NAME[5]]["frequency rate"]
-        cpi_instruction = task_dict[TASKS_NAME[5]]["CPI instruction"]
-        return instruction_count, frequency_rate, cpi_instruction
+        return instruction_count, frequency_rate
 
     graph.add_vertex(TASKS_NAME[5], t6())
 
