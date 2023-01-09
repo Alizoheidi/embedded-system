@@ -49,7 +49,7 @@ def asp_taskList(graph):
         task_id += f"taskId({task},a1).\n"
         instruction_count, frequency_rate, cpi_instruction = graph.vertices_functions[task]
         instructionCount_str += f"instructionCount({task},{instruction_count}).\n"
-        sizeOfgraph += f'sizeOfgraph({task},{len(graph.give_nondirected_edges(task))}).\n'
+        sizeOfgraph += f'nodeDegree({task},{len(graph.give_nondirected_edges(task))}).\n'
 
     str_data = "application(a1).\n\n" + task_id + operator_str + sizeOfgraph + instructionCount_str + sucessors_str
 

@@ -1,7 +1,6 @@
 import pandas
 from ressource_library import PROCESSORS_NAME
 from tasks import TASKS_NAME
-from tabels import operational_time_table
 
 performance_table = pandas.DataFrame(
     data=[['-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-'], ['-', '-', '-', '-', '-', '-']],
@@ -41,8 +40,8 @@ def computing_results(graph, task_vertex):
         performance = 1 / execution_time
         # add data to the table
         performance_table.loc[processor][task_vertex] = performance
-        # energy consumption = consume power * operational time
-        energy_consumption = round(p_consume_power * operational_time_table.loc[processor][task_vertex], 2)
+        # energy consumption = consume power * execution time
+        energy_consumption = round(p_consume_power * execution_time, 2)
         # add data to the table
         energy_consumption_table.loc[processor][task_vertex] = energy_consumption
 

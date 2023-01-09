@@ -2,7 +2,7 @@ import json
 
 with open('resource_library.json') as json_file:
     resource_lib_dict = json.load(json_file)
-PROCESSORS_NAME = list(resource_lib_dict.keys())
+PROCESSORS_NAME = tuple(resource_lib_dict.keys())
 
 
 def add_resource_library_nodes(graph):
