@@ -23,8 +23,9 @@ if __name__ == "__main__":
     print('\nall execution times:\n', execution_time_table)
     print('\nenergy consumption:\n', energy_consumption_table)
     # create .lp results
-    energy_consumption_pie_chart(energy_consumption_table)
-    time_bar_graph(execution_time_table)
     asp_taskList(graph)
     asp_resource_library(graph)
     asp_mapping_option()
+    energy_consumption_pie_chart(energy_consumption_table)
+    time_bar_graph(execution_time_table)
+
