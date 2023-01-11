@@ -17,7 +17,7 @@ def asp_resource_library(graph):
         p_energy_consumption = sum(
             [round(energy, 6) for energy in energy_consumption_table.iloc[i].values if energy != '-'])
         i += 1
-        p_type, cpi, p_frequency, p_consume_power, clock_rate = graph.vertices_functions[p]
+        p_type, p_frequency, p_consume_power, clock_rate = graph.vertices_functions[p]
         p_clock_rate_str += f'clock rate(r{i},{clock_rate}).\n'
         p_type_str += f'type(r{i},{p_type})\n'
         p_name_str += f'resourceTyp(r{i},{p}).\n'
@@ -47,7 +47,7 @@ def asp_taskList(graph):
 
     for task in TASKS_NAME:
         task_id += f"taskId({task},a1).\n"
-        instruction_count, frequency_rate = graph.vertices_functions[task]
+        instruction_count, frequency_rate, cpi = graph.vertices_functions[task]
         instructionCount_str += f"instructionCount({task},{instruction_count}).\n"
         sizeOfgraph += f'nodeDegree({task},{len(graph.give_nondirected_edges(task))}).\n'
 

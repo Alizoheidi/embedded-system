@@ -2,21 +2,18 @@
   "FPGA":{
     "type": "XC2064",
     "clock rate": 33,
-    "CPI":33,
     "frequency":1.5,
     "consume power":3.0
   },
   "RISC":{
     "type": "IBM801",
     "clock rate": 15,
-    "CPI":15,
     "frequency":2.0,
     "consume power":4.3
   },
   "Cisc":{
     "type": "INTELX88",
     "clock rate": 10,
-    "CPI":10,
     "frequency":2.5,
     "consume power":6.3
   }
